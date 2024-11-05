@@ -1,0 +1,20 @@
+{
+	"name": "k4-doom-talk-slides",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "astro build",
+		"dev": "astro dev",
+		"preview": "astro preview"
+	},
+	"dependencies": {
+		"@fontsource-variable/league-spartan": "^5.1.0",
+		"astro": "4.16.9",
+		"reveal.js": "5.1.0"
+	},
+	"devDependencies": {
+		"@types/reveal.js": "5.0.3",
+		"sass": "1.77.8"
+	}
+}

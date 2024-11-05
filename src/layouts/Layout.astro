@@ -1,0 +1,70 @@
+---
+import '@fontsource-variable/league-spartan';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/k4-doom-talk-slides/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+	</head>
+
+	<body>
+		<slot />
+
+		<script>
+			import Reveal from "reveal.js";
+
+			Reveal.initialize({
+				transition: "none",
+				history: true,
+				progress: false,
+				controls: false,
+				autoAnimateDuration: 0.5,
+				autoAnimateEasing: "cubic-bezier(0.4, 0, 0.2, 1)",
+			});
+		</script>
+	</body>
+</html>
+
+<style is:global lang="scss">
+	// Sass is installed by default, you can change if you prefer Stylus or Less
+	@import "reveal.js/dist/reveal.css";
+	@import "reveal.js/dist/theme/night.css";
+
+	@import "../../src/styles/colors.scss";
+
+	main,
+	.slide-background-content {
+		background: $primary-background-color;
+	}
+
+
+	.html,
+	.reveal,
+	.reveal h1,
+	.reveal h2,
+	.reveal h3,
+	.reveal h4,
+	.reveal h5,
+	.reveal h6 {
+		font-family: 'League Spartan Variable', sans-serif;
+	}
+
+	.reveal h2 {
+		font-weight: bold;
+	}
+	// https://fontsource.org/fonts/league-spartan/install
+
+
+	// https://fonts.google.com/specimen/Poppins
+	// https://fonts.google.com/specimen/Work+Sans
+	// https://befonts.com/pier-sans-font-family.html
+</style>
+
