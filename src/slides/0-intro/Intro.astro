@@ -1,0 +1,42 @@
+---
+import doomBg from "./assets/doom_bg.png";
+import doomColor from './assets/doom_colored.png'
+import Slide from "../../components/Slide.astro";
+---
+
+<Slide data-background-image={doomBg.src} data-background-opacity="0.08">
+  <div class="content">
+    <p class="title">
+      <h2>
+        Un pixel, puis un autre
+      </h2>
+      <div class="title-subtitle">
+        Comment porter <img class="doom-name" data-src={doomColor.src}> sur Kindle
+      </div>
+
+    <p>Comment porter <span class="text-gradient">DOOM</span> sur Kindle</p>
+  </div>
+</Slide>
+
+
+<style>
+  .doom-name {
+    height: 45px;
+    margin: 0 10px;
+  }
+
+  .title-subtitle {
+    display: flex;
+    justify-content: center;
+  }
+
+  /** Text Gradient Example */
+  .text-gradient {
+    font-weight: bolder;
+    color: #18376d;
+    background-image: linear-gradient(180deg, #18376d 26%, #b85b35 53%, #e9f179 97%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

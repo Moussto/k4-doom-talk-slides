@@ -1,14 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Title from "../slides/Title.astro";
-import WhyAstro from "../slides/WhyAstro.astro";
+import Intro from "../slides/0-intro/Intro.astro";
+import WtfIsDoomPorting from "../slides/1-wtf-is-doom-porting/WtfIsDoomPorting.astro";
+import SshAndHelloWorldKindle from "../slides/2-ssh-and-hello-world-kindle/SshAndHelloWorldKindle.astro";
+import CrossCompilation from "../slides/3-cross-compilation/CrossCompilation.astro";
+import DoomSourceCode from "../slides/4-doom-source-code/DoomSourceCode.astro";
+import KindleFramebuffer from "../slides/5-code-and-kindle-framebuffer/KindleFramebuffer.astro";
+import FpsAndDithering from "../slides/6-fps-and-dithering/FpsAndDithering.astro";
+import Outro from "../slides/7-outro/Outro.astro";
 ---
 
-<Layout title="K4DOOM" >
+<Layout title="K4 DOOM" >
 	<main class="reveal">
 		<div class="slides">
-			<Title />
-			<WhyAstro />
+			<Intro />
+			<WtfIsDoomPorting/>
+			<SshAndHelloWorldKindle/>
+			<CrossCompilation/>
+			<DoomSourceCode/>
+			<KindleFramebuffer/>
+			<FpsAndDithering/>
+			<Outro/>
 		</div>
 	</main>
 </Layout>

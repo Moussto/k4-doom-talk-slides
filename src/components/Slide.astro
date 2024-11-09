@@ -1,16 +1,35 @@
 ---
-interface Props {
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"section"> {
   /**
    * Use the auto-animate feature for this slide or not
    *
    * default: true
    */
   animate?: boolean;
+  title?: string;
 }
 
-const { animate = true } = Astro.props;
+const { animate = true, title, ...attrs } = Astro.props;
 ---
 
-<section data-auto-animate={animate}>
-  <slot />
+<section data-auto-animate={animate} {...attrs}>
+  {
+    /* the auto-animate feature seems to fail when the section has more than one children. This divs is an attempt to fix that */
+  }
+  <div>
+    {title && <h3 class="slide-title">{title}</h3>}
+    <slot />
+  </div>
 </section>
+
+<style>
+  section:has(.slide-title) {
+    top: 0 !important;
+    height: 100dvh;
+  }
+  .slide-title {
+    --r-heading-margin: 12dvh 0 5dvh;
+  }
+</style>

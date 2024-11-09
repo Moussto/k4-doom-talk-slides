@@ -1,0 +1,35 @@
+---
+import Slide from "../../components/Slide.astro";
+
+import dosBg from './assets/dos.png'
+import gameplay from './assets/doom_gameplay.mp4'
+import SectionTitle from "../../components/SectionTitle.astro";
+import ListOfPorts from "./ListOfPorts.astro";
+// Credit https://www.youtube.com/watch?v=MnqLJpgq7jc
+---
+<Slide data-background-image={dosBg.src}  data-background-opacity="0.08">
+    <h2>DOOM</h2>
+</Slide>
+
+<Slide>
+    <video data-autoplay muted loop data-src={gameplay}></video>
+</Slide>
+
+<Slide>
+    <h2>Sorti sur DOS + Timeline TODO</h2>
+</Slide>
+
+<Slide>
+    <ListOfPorts/>
+</Slide>
+
+<Slide>
+    <h2>Comic src</h2>
+</Slide>
+
+
+<style lang="scss">
+  video {
+    border-radius: 16px;
+  }
+</style>
